@@ -1,0 +1,1 @@
+sudo docker run -p 5001:5000 -v /home/tony/Documents/Trema/Trema_v2/backend/novosti:/app trema_novosti
