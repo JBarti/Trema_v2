@@ -10,6 +10,7 @@ flask = "*"
 flask-pymongo = "*"
 flask-cors = "*"
 pipenv-to-requirements = "*"
+dataclasses = "*"
 
 [requires]
 python_version = "3.6"
