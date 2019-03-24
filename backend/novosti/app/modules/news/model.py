@@ -14,9 +14,3 @@ class Post:
 
     def to_dict(self):
         return asdict(self)
-
-    def check_data(self):
-        for field in fields(self):
-            if not field.type is str:
-                return False
-        return True
