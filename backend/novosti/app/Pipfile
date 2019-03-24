@@ -9,6 +9,7 @@ verify_ssl = true
 flask = "*"
 flask-pymongo = "*"
 flask-cors = "*"
+pipenv-to-requirements = "*"
 
 [requires]
 python_version = "3.6"
