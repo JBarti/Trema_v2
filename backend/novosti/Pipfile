@@ -4,15 +4,8 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-pylint = "*"
-black = "*"
 
 [packages]
-flask = "*"
-flask-pymongo = "*"
-flask-cors = "*"
-pipenv-to-requirements = "*"
-dataclasses = "*"
 
 [requires]
 python_version = "3.6"
