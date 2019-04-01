@@ -14,9 +14,9 @@ class Post:
     _id: str = ""
 
     def to_dict(self):
-        dct = asdict(self)
-        dct.pop("_id")
-        return dct
+        data = asdict(self)
+        data.pop("_id", None)
+        return data
 
     def to_resp(self):
         data = asdict(self)
@@ -28,9 +28,9 @@ class Post:
         lst_date = self.date.split("/")
         try:
             self.date = datetime(int(lst_date[2]), int(lst_date[1]), int(lst_date[0]))
+            return self.date
         except ValueError:
-            self.date = None
-        return self.date
+            return None
 
     def date_to_str(self):
         self.date = self.date.strftime("%d/%m/%Y")
