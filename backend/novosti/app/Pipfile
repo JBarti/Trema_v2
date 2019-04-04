@@ -5,7 +5,6 @@ verify_ssl = true
 
 [dev-packages]
 pylint = "*"
-black = "*"
 
 [packages]
 flask = "*"
@@ -13,6 +12,7 @@ flask-pymongo = "*"
 flask-cors = "*"
 pipenv-to-requirements = "*"
 dataclasses = "*"
+requests = "*"
 
 [requires]
 python_version = "3.6"

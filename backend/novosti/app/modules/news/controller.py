@@ -4,11 +4,22 @@ from bson import ObjectId, json_util
 from bson import errors
 from dataclasses import asdict
 from .utilities import conv_to_date
+from os import environ
+import requests
 
 
 class NewsController:
     def __init__(self, mongo):  # mongo --> type(PyMongo.db)
         self.db = mongo.news
+
+    def handle_image(self, image):
+        image.seek(0)
+        pymgur_host = environ.get("PYMGUR")
+        res = requests.post(
+            f"http://{pymgur_host}:5000/",
+            files={"img": (image.filename, image.stream, image.mimetype)},
+        )
+        return res
 
     def post_data(self, data):
         try:

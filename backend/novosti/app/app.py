@@ -4,6 +4,7 @@ from flask_pymongo import PyMongo
 from config import dev_config, pro_config
 from modules import NewsController
 
+
 app = Flask(__name__)
 
 dev_config(app)
@@ -30,6 +31,15 @@ def get():
 @app.route("/service/news/post", methods=["POST"])
 def post():
     data = request.get_json()
+    try:
+        image = request.files["img"]
+        res = controller.handle_image(image)
+        if res.status_code == "400":
+            return res.text
+    except KeyError:
+        pass
+
+    data["image"] = res.text
     resp = controller.post_data(data)
     return resp
 
