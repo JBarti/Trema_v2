@@ -1,0 +1,21 @@
+version: '3.5'
+
+services:
+  novosti: 
+    build:
+      context: ./novosti
+    environment:
+      PYMGUR: "pymgur"
+    ports:
+    - "5001:5000"
+    volumes:
+    - "./novosti:/app"
+    depends_on:
+    - pymgur
+  
+  pymgur:
+    build:
+      context: ./pymgur
+    volumes:
+    - "./pymgur:/app"
+
