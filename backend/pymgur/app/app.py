@@ -1,7 +1,7 @@
 from flask import Flask, request, send_file, abort
 from flask_cors import CORS
 from config import dev_config, pro_config
-from os import listdir
+from os import listdir, remove
 
 app = Flask(__name__, static_url_path="/")
 
@@ -38,8 +38,16 @@ def post():
 
     img.save(f"./app/static/{filename}")
 
-    return f"http://0.0.0.0:5000/{filename}"
+    return f"http://0.0.0.0:5000/pymgur/{filename}"
     # napravit rutu na auth servisu koja ce vata slike samo odavde
+
+
+@app.route("/delete", methods=["DELETE"])
+def delete():
+    data = request.get_json()
+    filename = data["image"].split("/")[4]
+    remove(f"./app/static/{filename}")
+    return "Success."
 
 
 if "__main__" == __name__:
