@@ -29,7 +29,7 @@ class Post:
         try:
             self.date = datetime(int(lst_date[2]), int(lst_date[1]), int(lst_date[0]))
             return self.date
-        except ValueError:
+        except (ValueError, IndexError):
             return None
 
     def date_to_str(self):

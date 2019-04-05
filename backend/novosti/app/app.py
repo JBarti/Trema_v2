@@ -31,15 +31,6 @@ def get():
 @app.route("/service/news/post", methods=["POST"])
 def post():
     data = request.get_json()
-    try:
-        image = request.files["img"]
-        res = controller.handle_image(image)
-        if res.status_code == "400":
-            return res.text
-    except KeyError:
-        pass
-
-    data["image"] = res.text
     resp = controller.post_data(data)
     return resp
 
