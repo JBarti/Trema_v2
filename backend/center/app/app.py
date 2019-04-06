@@ -32,21 +32,31 @@ def login():
     if not check:
         return abort(400, "No data matches")
     session["id"] = uuid4().bytes
+    session["email"] = data["email"]
     return "Logged in."
 
 
-@APP.route("/register")
+@APP.route("/adduser", methods=["POST"])
+@login_required
 def register():
-    mongo.db.users.delete_many({})
-    from werkzeug.security import generate_password_hash
+    data = request.get_json()
+    res = controller.add_user(data)
+    return res
 
-    mongo.db.users.insert_one(
-        {
-            "email": "test@test",
-            "password": generate_password_hash("password", method="sha256"),
-        }
-    )
-    return "registered"
+
+@APP.route("/removeuser", methods=["DELETE"])
+@login_required
+def remove():
+    data = request.get_json()
+    res = controller.delete_user(data)
+    return res
+
+
+@APP.route("/getusers")
+@login_required
+def get_users():
+    res = controller.get_users()
+    return res
 
 
 @APP.route("/logout")
