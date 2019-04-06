@@ -38,14 +38,14 @@ def post():
 
     img.save(f"./app/static/{filename}")
 
-    return f"http://0.0.0.0:5000/pymgur/{filename}"
+    return filename
     # napravit rutu na auth servisu koja ce vata slike samo odavde
 
 
 @app.route("/delete", methods=["DELETE"])
 def delete():
     data = request.get_json()
-    filename = data["image"].split("/")[4]
+    filename = data["image"]
     remove(f"./app/static/{filename}")
     return "Success."
 
