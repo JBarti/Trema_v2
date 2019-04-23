@@ -1,0 +1,15 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Myriad Pro Regular";
+  font-size: 18px;
+  background-color: cadetblue;
+  opacity: 0.8;
+  color: white;
+  height: 60px;
+  padding: 0 350px;
+  position: relative;
+  bottom: 60px;
+}
