@@ -1,11 +1,9 @@
-import requests
 from os import environ
 from .model import Post
-from bson import errors
 from datetime import datetime
 from dataclasses import asdict
 from flask import abort, jsonify
-from bson import ObjectId, json_util
+from bson import ObjectId, errors
 
 
 class NewsController:
