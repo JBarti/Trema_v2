@@ -1,7 +1,7 @@
-from flask import Blueprint, request, abort
 import requests
-from .utilities import ImageController, login_required
 from os import environ
+from flask import Blueprint, request, abort
+from .utilities import ImageController, login_required
 
 news_bp = Blueprint("news_api", __name__, url_prefix="/news")
 

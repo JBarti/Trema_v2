@@ -1,11 +1,11 @@
-from flask import abort, jsonify
-from .model import Post
-from bson import ObjectId, json_util
-from bson import errors
-from dataclasses import asdict
-from .utilities import conv_to_date, jsonify_query
-from os import environ
 import requests
+from os import environ
+from .model import Post
+from bson import errors
+from datetime import datetime
+from dataclasses import asdict
+from flask import abort, jsonify
+from bson import ObjectId, json_util
 
 
 class NewsController:
@@ -72,3 +72,21 @@ class NewsController:
             return jsonify_query(query)
 
         return jsonify_query(self.db.find().sort("date", -1).limit(5))
+
+
+def conv_to_date(str_date):
+    try:
+        date = str_date.split("/")
+        date_obj = datetime(int(date[2]), int(date[1]), int(date[0]))
+        return date_obj
+    except (ValueError, IndexError):
+        return None
+
+
+def jsonify_query(query):
+    news = [Post(**post) for post in query]
+    for post in news:
+        post.date_to_str()
+        post._id = str(post._id)
+
+    return jsonify([asdict(post) for post in news])

@@ -1,6 +1,6 @@
-from flask import Blueprint, request, abort
 import requests
 from os import environ
+from flask import Blueprint, request, abort
 from .utilities import login_required, ImageController
 
 pymgur_bp = Blueprint("pymgur_api", __name__, url_prefix="/pymgur")

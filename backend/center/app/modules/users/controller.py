@@ -1,5 +1,5 @@
-from flask import abort, jsonify, request, session
 from .model import User
+from flask import abort, jsonify, request, session
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
