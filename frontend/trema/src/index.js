@@ -9,7 +9,6 @@ const routes = (
   <BrowserRouter>
     <Switch>
       <Route exact path="/test" component={App} />
-
       <Route exact path="" component={Home} />
     </Switch>
   </BrowserRouter>
