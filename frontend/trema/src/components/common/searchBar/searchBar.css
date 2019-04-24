@@ -1,0 +1,38 @@
+.search-txt {
+  color: white;
+  outline: none;
+  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 2px white;
+  width: 0px;
+  font-variant: none;
+  font-family: "Myriad Pro Regular";
+  transition: 0.4s;
+}
+
+.search-txt::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.search-box:hover > .search-txt {
+  width: 150px;
+  padding: 0 6px;
+}
+
+.search-btn {
+  margin-left: 10px;
+  background: transparent;
+  transition: 0.4s;
+}
+
+.fa-search {
+  color: white;
+  size: 20px 20px;
+}
+
+.search-box {
+  position: absolute;
+  right: 50px;
+}

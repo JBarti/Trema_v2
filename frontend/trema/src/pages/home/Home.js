@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Home.css";
 import Block from "../../components/common/block/block";
 import Navbar from "../../components/common/navbar/navbar";
+import SearchBar from "../../components/common/searchBar/searchBar";
 
 const mainNavbarStyle = {
   backgroundColor: "cadetblue",
@@ -46,6 +47,7 @@ class Home extends Component {
           <p>o nama</p>
           <p>informacije</p>
           <p>natječaji</p>
+          <SearchBar />
         </Navbar>
         <Navbar style={sideNavbarStyle}>
           <p>raspored sati</p>
