@@ -44,4 +44,3 @@ def get(model):
     args = request.args.to_dict()
     resp = requests.get(f"{head_address}/{model}", params=args)
     return (resp.text, resp.status_code, resp.headers.items())
-

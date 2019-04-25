@@ -15,7 +15,7 @@ class Controller:
             if (hasattr(obj, "date")) and (not obj.str_to_date()):
                 return abort(400, "Date format is not correct.")
             self.db.insert_one(obj.to_dict())
-            if hasattr(obj, "date"):          
+            if hasattr(obj, "date"):
                 obj.date_to_str()
             return jsonify(data)
         except:

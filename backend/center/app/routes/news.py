@@ -44,4 +44,3 @@ def get():
     args = request.args.to_dict()
     resp = requests.get(f"{news_address}/", params=args)
     return (resp.text, resp.status_code, resp.headers.items())
-
