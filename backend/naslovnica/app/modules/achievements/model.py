@@ -1,6 +1,6 @@
-from dataclasses import dataclass, asdict
-from datetime import datetime
 from flask import jsonify
+from datetime import datetime
+from dataclasses import dataclass, asdict
 
 
 @dataclass
@@ -10,6 +10,7 @@ class Achievement:
     body: str
     tldr: str
     date: str
+    _id: str = ""
 
     def to_dict(self):
         data = asdict(self)
