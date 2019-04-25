@@ -1,1 +1,2 @@
-from .routes import colleges_bp
+from .model import College
+from .controller import CollegeController

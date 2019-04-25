@@ -1,1 +1,2 @@
-from .routes import achievements_bp
+from .model import Achievement
+from .controller import AchievementController

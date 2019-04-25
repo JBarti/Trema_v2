@@ -1,26 +1,30 @@
 from datetime import datetime
 from flask import abort, jsonify
 from bson import ObjectId, errors
+from dataclasses import asdict
 
 
 class Controller:
-    def __init__(self, mongo):
+    def __init__(self, mongo, obj):
         self.db = mongo.headpage
+        self.obj = obj
 
-    def post_data(self, data, Obj):
+    def post_data(self, data):
         try:
-            obj = Obj(**data)
+            obj = self.obj(**data)
             if (hasattr(obj, "date")) and (not obj.str_to_date()):
                 return abort(400, "Date format is not correct.")
             self.db.insert_one(obj.to_dict())
-            obj.date_to_str()
+            if hasattr(obj, "date"):          
+                obj.date_to_str()
             return jsonify(data)
         except:
             return abort(400, "Submitted payload does not meet the right parametres.")
 
-    def put_data(self, data, Obj):
+    def put_data(self, data):
         try:
-            obj = Obj(**data)
+            data.pop("model", None)
+            obj = self.obj(**data)
 
             if (hasattr(obj, "date")) and (not obj.str_to_date()):
                 return abort(400, "Date format is not correct.")
@@ -59,9 +63,19 @@ class Controller:
         except (ValueError, IndexError):
             return None
 
-    def jsonify_query(self, query, Obj):
-        objs = [Obj(**obj) for obj in query]
+    def jsonify_query(self, query):
+        objs = [self.obj(**self.pop_model(obj)) for obj in query]
         for obj in objs:
             if hasattr(obj, "date"):
                 obj.date_to_str()
             obj._id = str(obj._id)
+        return jsonify([asdict(obj) for obj in objs])
+
+    def jsonify_bson(self, data):
+        data["_id"] = str(data["_id"])
+        return jsonify(data)
+
+    def pop_model(self, obj):
+        obj.pop("model", None)
+        print(obj)
+        return obj

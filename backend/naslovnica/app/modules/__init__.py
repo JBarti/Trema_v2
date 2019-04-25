@@ -1,2 +1,5 @@
-from .colleges import colleges_bp
-from .achievements import achievements_bp
+from .links import Link, LinkController
+from .subjects import Subject, SubjectController
+from .colleges import College, CollegeController
+from .headmaster import Headmaster, HeadmasterController
+from .achievements import Achievement, AchievementController
