@@ -3,45 +3,45 @@ from os import environ
 from flask import Blueprint, request, abort
 from .utilities import ImageController, login_required
 
-news_bp = Blueprint("news_api", __name__, url_prefix="/news")
+head_bp = Blueprint("head_api", __name__, url_prefix="/headpage")
 
 controller = ImageController()
 
-news_host = environ.get("NEWS")
-news_address = f"http://{news_host}:5000/service/news"
+head_host = environ.get("HEADPAGE")
+head_address = f"http://{head_host}:5000/service/head"
 
 
-@news_bp.route("/", methods=["POST"])
+@head_bp.route("/<model>", methods=["POST"])
 @login_required
-def post():
+def post(model):
     data = request.get_json()
-    resp = requests.post(f"{news_address}/", json=data)
+    resp = requests.post(f"{head_address}/{model}", json=data)
     return (resp.text, resp.status_code, resp.headers.items())
 
 
-@news_bp.route("/", methods=["PUT"])
+@head_bp.route("/<model>", methods=["PUT"])
 @login_required
-def put():
+def put(model):
     data = request.get_json()
-    resp = requests.put(f"{news_address}/", json=data)
+    resp = requests.put(f"{head_address}/{model}", json=data)
     return (resp.text, resp.status_code, resp.headers.items())
 
 
-@news_bp.route("/", methods=["DELETE"])
+@head_bp.route("/<model>", methods=["DELETE"])
 @login_required
-def delete():
+def delete(model):
     data = request.get_json()
     if "image" in data:
         img_stat = controller.delete_image(data)
         if img_stat != 200:
             return abort(400, "No image with given name has been found to delete.")
-    resp = requests.delete(f"{news_address}/", json=data)
+    resp = requests.delete(f"{head_address}/{model}", json=data)
     return (resp.text, resp.status_code, resp.headers.items())
 
 
-@news_bp.route("/")
-def get():
+@head_bp.route("/<model>")
+def get(model):
     args = request.args.to_dict()
-    resp = requests.get(f"{news_address}/", params=args)
+    resp = requests.get(f"{head_address}/{model}", params=args)
     return (resp.text, resp.status_code, resp.headers.items())
 

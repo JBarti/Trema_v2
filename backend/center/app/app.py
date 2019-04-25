@@ -20,7 +20,7 @@ controller = UsersController(mongo.db)
 @APP.before_request
 def make_session_permanent():
     session.permanent = True
-    APP.permanent_session_lifetime = timedelta(minutes=5)
+    APP.permanent_session_lifetime = timedelta(minutes=10)
 
 
 @APP.route("/login", methods=["POST"])
@@ -67,8 +67,9 @@ def logout():
 
 
 if __name__ == "__main__":
-    from routes import news_bp, pymgur_bp
+    from routes import news_bp, pymgur_bp, head_bp
 
     APP.register_blueprint(news_bp)
+    APP.register_blueprint(head_bp)
     APP.register_blueprint(pymgur_bp)
     APP.run(host="0.0.0.0")
