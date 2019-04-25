@@ -11,6 +11,7 @@ class College:
     def to_dict(self):
         data = asdict(self)
         data.pop("_id", None)
+        data["model"] = "college"
         return data
 
     def to_resp(self):

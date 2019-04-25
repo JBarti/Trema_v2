@@ -15,6 +15,7 @@ class Achievement:
     def to_dict(self):
         data = asdict(self)
         data.pop("_id", None)
+        data["model"] = "achievement"
         return data
 
     def to_resp(self):

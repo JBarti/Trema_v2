@@ -17,4 +17,7 @@ class AchievementController(Controller):
 
             return self.jsonify_query(query, Achievement)
 
-        return self.jsonify_query(self.db.find().sort("date", -1).limit(5), Achievement)
+        return self.jsonify_query(
+            self.db.find({"model": "achievement"}).sort("date", -1).limit(5),
+            Achievement,
+        )
