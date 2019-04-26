@@ -8,10 +8,6 @@
   background-attachment: fixed;
 }
 
-p {
-  text-transform: uppercase;
-}
-
 .image__ravnateljica {
   height: 470px;
   width: 660px;
@@ -19,29 +15,6 @@ p {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.title {
-  font-family: "Proza Libre", sans-serif;
-}
-
-.block2__title {
-  font-size: 54px;
-  position: relative;
-  right: 130px;
-  margin-bottom: 20px;
-  color: red;
-}
-
-.paraf {
-  font-family: "Myriad Pro Regular";
-  font-size: 18px;
-  text-align: justify;
-}
-
-.block2__paraf {
-  height: 200px;
-  width: 600px;
 }
 
 .block2__text {
@@ -52,6 +25,6 @@ p {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 1920px 78px 0;
+  border-width: 0 100vw 78px 0;
   border-color: transparent darkgray transparent transparent;
 }

@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import "./Home.css";
+
 import Block from "../../components/common/block/block";
 import Navbar from "../../components/common/navbar/navbar";
 import SearchBar from "../../components/common/searchBar/searchBar";
-import uvodnaRijecShort from "../../data/pozdravnaRijec";
+import Title from "../../components/common/title/title";
+import Paraf from "../../components/common/paraf/paraf";
+
 import pozdravnaRijec from "../../data/pozdravnaRijec";
 
 const mainNavbarStyle = {
@@ -36,10 +39,24 @@ const block2Style = {
   padding: "0 0 0 150px"
 };
 
+const block2TitleStyle = {
+  fontSize: "54px",
+  position: "relative",
+  right: "130px",
+  marginBottom: "20px",
+  color: "red"
+};
+
+const block2ParafStyle = {
+  height: "200px",
+  width: "600px"
+};
+
 class Home extends Component {
   constructor() {
     super();
   }
+
   render() {
     return (
       <div>
@@ -64,10 +81,10 @@ class Home extends Component {
         <Block style={block2Style}>
           <div className="image__ravnateljica" />
           <div className="block2__text">
-            <div className="title block2__title">
+            <Title style={block2TitleStyle}>
               Dragi učenici, kolege, prijatelji!
-            </div>
-            <div className="paraf  block2__paraf">{pozdravnaRijec}</div>
+            </Title>
+            <Paraf style={block2ParafStyle}>{pozdravnaRijec}</Paraf>
           </div>
         </Block>
         <div className="triangle-decorator" />
