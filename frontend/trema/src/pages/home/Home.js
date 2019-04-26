@@ -70,6 +70,7 @@ class Home extends Component {
             <div className="paraf  block2__paraf">{pozdravnaRijec}</div>
           </div>
         </Block>
+        <div className="triangle-decorator" />
       </div>
     );
   }

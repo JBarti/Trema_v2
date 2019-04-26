@@ -47,3 +47,11 @@ p {
 .block2__text {
   margin-left: 50px;
 }
+
+.triangle-decorator {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 1920px 78px 0;
+  border-color: transparent darkgray transparent transparent;
+}
