@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Home.css";
+import style from "./Style";
 
 import Block from "../../components/common/block/block";
 import Navbar from "../../components/common/navbar/navbar";
@@ -9,49 +10,6 @@ import Paraf from "../../components/common/paraf/paraf";
 
 import pozdravnaRijec from "../../data/pozdravnaRijec";
 
-const mainNavbarStyle = {
-  backgroundColor: "cadetblue",
-  height: "60px",
-  fontSize: "18px",
-  padding: "0 350px",
-  opacity: "0.8",
-  marginTop: "-60px",
-  position: "sticky",
-  top: "0"
-};
-
-const sideNavbarStyle = {
-  height: "44px",
-  fontSize: "14px",
-  backgroundColor: "gray",
-  padding: "0 100px"
-};
-
-const block1Style = {
-  height: "100vh"
-};
-
-const block2Style = {
-  backgroundColor: "darkgray",
-  height: "700px",
-  justifyContent: "flex-start",
-  flexDirection: "row",
-  padding: "0 0 0 150px"
-};
-
-const block2TitleStyle = {
-  fontSize: "54px",
-  position: "relative",
-  right: "130px",
-  marginBottom: "20px",
-  color: "red"
-};
-
-const block2ParafStyle = {
-  height: "200px",
-  width: "600px"
-};
-
 class Home extends Component {
   constructor() {
     super();
@@ -60,10 +18,10 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Block style={block1Style}>
+        <Block style={style.block1Style}>
           <div className="block1__background" />
         </Block>
-        <Navbar style={mainNavbarStyle}>
+        <Navbar style={style.mainNavbarStyle}>
           <p>naslovnica</p>
           <p>novosti</p>
           <p>o nama</p>
@@ -71,20 +29,20 @@ class Home extends Component {
           <p>natječaji</p>
           <SearchBar />
         </Navbar>
-        <Navbar style={sideNavbarStyle}>
+        <Navbar style={style.sideNavbarStyle}>
           <p>raspored sati</p>
           <p>vremenik pismenih provjera</p>
           <p>tlocrt škole</p>
           <p>radno vrijeme školske knjižnice</p>
           <p>primanja roditelja</p>
         </Navbar>
-        <Block style={block2Style}>
+        <Block style={style.block2Style}>
           <div className="image__ravnateljica" />
           <div className="block2__text">
-            <Title style={block2TitleStyle}>
+            <Title style={style.block2TitleStyle}>
               Dragi učenici, kolege, prijatelji!
             </Title>
-            <Paraf style={block2ParafStyle}>{pozdravnaRijec}</Paraf>
+            <Paraf style={style.block2ParafStyle}>{pozdravnaRijec}</Paraf>
           </div>
         </Block>
         <div className="triangle-decorator" />
