@@ -5,8 +5,45 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
+  background-attachment: fixed;
 }
 
 p {
   text-transform: uppercase;
+}
+
+.image__ravnateljica {
+  height: 470px;
+  width: 660px;
+  background-image: url("../../assets/ravnateljica.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.title {
+  font-family: "Proza Libre", sans-serif;
+}
+
+.block2__title {
+  font-size: 54px;
+  position: relative;
+  right: 130px;
+  margin-bottom: 20px;
+  color: red;
+}
+
+.paraf {
+  font-family: "Myriad Pro Regular";
+  font-size: 18px;
+  text-align: justify;
+}
+
+.block2__paraf {
+  height: 200px;
+  width: 600px;
+}
+
+.block2__text {
+  margin-left: 50px;
 }

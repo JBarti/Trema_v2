@@ -9,7 +9,7 @@ class SearchBar extends Component {
     return (
       <div className="search-box">
         <input className="search-txt" type="text" placeholder="Search" />
-        <a className="search-btn" href="#">
+        <a className="search-btn">
           <i class="fas fa-search" />
         </a>
       </div>

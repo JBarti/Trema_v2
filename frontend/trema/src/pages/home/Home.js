@@ -3,6 +3,8 @@ import "./Home.css";
 import Block from "../../components/common/block/block";
 import Navbar from "../../components/common/navbar/navbar";
 import SearchBar from "../../components/common/searchBar/searchBar";
+import uvodnaRijecShort from "../../data/pozdravnaRijec";
+import pozdravnaRijec from "../../data/pozdravnaRijec";
 
 const mainNavbarStyle = {
   backgroundColor: "cadetblue",
@@ -28,7 +30,10 @@ const block1Style = {
 
 const block2Style = {
   backgroundColor: "darkgray",
-  height: "800px"
+  height: "700px",
+  justifyContent: "flex-start",
+  flexDirection: "row",
+  padding: "0 0 0 150px"
 };
 
 class Home extends Component {
@@ -56,7 +61,15 @@ class Home extends Component {
           <p>radno vrijeme školske knjižnice</p>
           <p>primanja roditelja</p>
         </Navbar>
-        <Block style={block2Style} />
+        <Block style={block2Style}>
+          <div className="image__ravnateljica" />
+          <div className="block2__text">
+            <div className="title block2__title">
+              Dragi učenici, kolege, prijatelji!
+            </div>
+            <div className="paraf  block2__paraf">{pozdravnaRijec}</div>
+          </div>
+        </Block>
       </div>
     );
   }
