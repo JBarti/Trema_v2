@@ -1,7 +1,7 @@
 from os import environ
 import requests
 from functools import wraps
-from flask import session
+from flask import session, jsonify
 
 
 class ImageController:
@@ -18,6 +18,8 @@ class ImageController:
         return res
 
     def delete_image(self, data):
+        if data["image"] == None:
+            return 200
         resp = requests.delete(f"{self.pymgur_address}delete", json=data)
         return resp.status_code
 

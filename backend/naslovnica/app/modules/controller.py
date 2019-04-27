@@ -72,6 +72,8 @@ class Controller:
         return jsonify([asdict(obj) for obj in objs])
 
     def jsonify_bson(self, data):
+        if data is None:
+            return abort(400, "No data found.")
         data["_id"] = str(data["_id"])
         return jsonify(data)
 
