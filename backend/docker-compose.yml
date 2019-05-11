@@ -3,16 +3,22 @@ version: '3.5'
 services:
   news: 
     build:
-      context: ./novosti
+      context: ./news
     volumes:
-    - "./novosti:/app"
+    - "./news:/app"
 
   headpage:
     build:
-      context: ./naslovnica
+      context: ./headpage
     volumes:
-    - "./naslovnica:/app"
+    - "./headpage:/app"
   
+  about:
+    build:
+      context: ./about
+    volumes:
+    - "./about:/app"
+
   pymgur:
     build:
       context: ./pymgur
@@ -30,4 +36,4 @@ services:
     - "PYMGUR=pymgur"
     - "NEWS=news"
     - "HEADPAGE=headpage"
-    
+    - "ABOUT=about"

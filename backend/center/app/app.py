@@ -67,9 +67,10 @@ def logout():
 
 
 if __name__ == "__main__":
-    from routes import news_bp, pymgur_bp, head_bp
-
+    from routes import news_bp, pymgur_bp, head_bp, about_bp
+    
     APP.register_blueprint(news_bp)
+    APP.register_blueprint(about_bp)
     APP.register_blueprint(head_bp)
     APP.register_blueprint(pymgur_bp)
     APP.run(host="0.0.0.0")
