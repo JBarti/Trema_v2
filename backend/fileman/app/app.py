@@ -44,7 +44,7 @@ def post():
 @app.route("/delete", methods=["DELETE"])
 def delete():
     data = request.get_json()
-    filename = data["image"]
+    filename = data["file"]
     remove(f"./app/static/{filename}")
     return "Success."
 

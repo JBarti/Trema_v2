@@ -5,7 +5,7 @@ from dataclasses import dataclass, asdict
 
 @dataclass
 class Achievement:
-    image: str
+    file: str
     title: str
     body: str
     _id: str = ""

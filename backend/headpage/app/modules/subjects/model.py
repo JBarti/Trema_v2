@@ -4,7 +4,7 @@ from dataclasses import dataclass, asdict
 
 @dataclass
 class Subject:
-    image: str
+    file: str
     name: str
     _id: str = ""
 

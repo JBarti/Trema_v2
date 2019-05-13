@@ -4,7 +4,7 @@ from dataclasses import dataclass, asdict
 
 @dataclass
 class Headmaster:
-    image: str
+    file: str
     body: str
     _id: str = ""
 

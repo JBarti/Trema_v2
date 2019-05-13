@@ -12,6 +12,12 @@ services:
       context: ./headpage
     volumes:
     - "./headpage:/app"
+
+  applications:
+    build:
+      context: ./applications
+    volumes:
+    - "./applications:/app"
   
   about:
     build:
@@ -37,3 +43,4 @@ services:
     - "NEWS=news"
     - "HEADPAGE=headpage"
     - "ABOUT=about"
+    - "APPLICATIONS=applications"

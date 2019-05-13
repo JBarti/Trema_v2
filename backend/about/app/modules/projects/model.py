@@ -5,7 +5,7 @@ from dataclasses import dataclass, asdict
 
 @dataclass
 class Project:
-    image: str
+    file: str
     title: str
     date: str
     tldr: str

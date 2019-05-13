@@ -21,28 +21,28 @@ def root():
     return "<h1>Test route works</h1>"
 
 
-@app.route("/service/news/")
+@app.route("/service/news")
 def get():
     args = request.args
     resp = controller.get_data(args)
     return resp
 
 
-@app.route("/service/news/", methods=["POST"])
+@app.route("/service/news", methods=["POST"])
 def post():
     data = request.get_json()
     resp = controller.post_data(data)
     return resp
 
 
-@app.route("/service/news/", methods=["PUT"])
+@app.route("/service/news", methods=["PUT"])
 def put():
     data = request.get_json()
     resp = controller.put_data(data)
     return resp
 
 
-@app.route("/service/news/", methods=["DELETE"])
+@app.route("/service/news", methods=["DELETE"])
 def delete():
     data = request.get_json()
     resp = controller.delete_data(data)

@@ -8,7 +8,7 @@ class Post:
     title: str
     body: str
     tldr: str
-    image: str
+    file: str
     date: str
     author: str
     _id: str = ""

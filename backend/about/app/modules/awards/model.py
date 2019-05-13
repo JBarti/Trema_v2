@@ -4,7 +4,7 @@ from dataclasses import dataclass, asdict
 
 @dataclass
 class Award:
-    image: str
+    file: str
     title: str
     body: str
     _id: str = ""
