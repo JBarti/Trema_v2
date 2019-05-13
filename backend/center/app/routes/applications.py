@@ -3,44 +3,44 @@ from os import environ
 from flask import Blueprint, request, abort
 from .utilities import FileController, login_required
 
-head_bp = Blueprint("head_api", __name__, url_prefix="/headpage")
+application_bp = Blueprint("application_api", __name__, url_prefix="/application")
 
 controller = FileController()
 
-head_host = environ.get("HEADPAGE")
-head_address = f"http://{head_host}:5000/service/head"
+application_host = environ.get("APPLICATIONS")
+application_address = f"http://{application_host}:5000/service/application"
 
 
-@head_bp.route("/<model>", methods=["POST"])
+@application_bp.route("", methods=["POST"])
 @login_required
-def post(model):
+def post():
     data = request.get_json()
-    resp = requests.post(f"{head_address}{model}", json=data)
+    resp = requests.post(f"{application_address}", json=data)
     return (resp.text, resp.status_code, resp.headers.items())
 
 
-@head_bp.route("/<model>", methods=["PUT"])
+@application_bp.route("", methods=["PUT"])
 @login_required
-def put(model):
+def put():
     data = request.get_json()
-    resp = requests.put(f"{head_address}{model}", json=data)
+    resp = requests.put(f"{application_address}", json=data)
     return (resp.text, resp.status_code, resp.headers.items())
 
 
-@head_bp.route("/<model>", methods=["DELETE"])
+@application_bp.route("", methods=["DELETE"])
 @login_required
-def delete(model):
+def delete():
     data = request.get_json()
     if "file" in data:
         file_stat = controller.delete_file(data)
         if file_stat != 200:
             return abort(400, "No file with given name has been found to delete.")
-    resp = requests.delete(f"{head_address}{model}", json=data)
+    resp = requests.delete(f"{application_address}", json=data)
     return (resp.text, resp.status_code, resp.headers.items())
 
 
-@head_bp.route("/<model>")
-def get(model):
+@application_bp.route("")
+def get():
     args = request.args.to_dict()
-    resp = requests.get(f"{head_address}{model}", params=args)
+    resp = requests.get(f"{application_address}", params=args)
     return (resp.text, resp.status_code, resp.headers.items())

@@ -11,23 +11,23 @@ news_host = environ.get("NEWS")
 news_address = f"http://{news_host}:5000/service/news"
 
 
-@news_bp.route("/", methods=["POST"])
+@news_bp.route("", methods=["POST"])
 @login_required
 def post():
     data = request.get_json()
-    resp = requests.post(f"{news_address}/", json=data)
+    resp = requests.post(f"{news_address}", json=data)
     return (resp.text, resp.status_code, resp.headers.items())
 
 
-@news_bp.route("/", methods=["PUT"])
+@news_bp.route("", methods=["PUT"])
 @login_required
 def put():
     data = request.get_json()
-    resp = requests.put(f"{news_address}/", json=data)
+    resp = requests.put(f"{news_address}", json=data)
     return (resp.text, resp.status_code, resp.headers.items())
 
 
-@news_bp.route("/", methods=["DELETE"])
+@news_bp.route("", methods=["DELETE"])
 @login_required
 def delete():
     data = request.get_json()
@@ -35,12 +35,12 @@ def delete():
         file_stat = controller.delete_file(data)
         if file_stat != 200:
             return abort(400, "No file with given name has been found to delete.")
-    resp = requests.delete(f"{news_address}/", json=data)
+    resp = requests.delete(f"{news_address}", json=data)
     return (resp.text, resp.status_code, resp.headers.items())
 
 
-@news_bp.route("/")
+@news_bp.route("")
 def get():
     args = request.args.to_dict()
-    resp = requests.get(f"{news_address}/", params=args)
+    resp = requests.get(f"{news_address}", params=args)
     return (resp.text, resp.status_code, resp.headers.items())

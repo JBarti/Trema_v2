@@ -1,9 +1,8 @@
 from dataclasses import dataclass, asdict
-from flask_login import UserMixin
 
 
 @dataclass
-class User(UserMixin):
+class User:
     email: str
     password: str
 

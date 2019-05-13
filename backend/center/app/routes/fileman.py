@@ -15,11 +15,11 @@ controller = FileController()
 
 @fileman_bp.route("/<filename>")
 def get(filename):
-    resp = requests.get(f"{fileman_address}/{filename}")
+    resp = requests.get(f"{fileman_address}{filename}")
     return (resp.content, resp.status_code, resp.headers.items())
 
 
-@fileman_bp.route("/", methods=["POST"])
+@fileman_bp.route("", methods=["POST"])
 @login_required
 def post():
     try:
