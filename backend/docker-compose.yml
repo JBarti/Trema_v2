@@ -19,11 +19,11 @@ services:
     volumes:
     - "./about:/app"
 
-  pymgur:
+  fileman:
     build:
-      context: ./pymgur
+      context: ./fileman
     volumes:
-    - "./pymgur:/app"
+    - "./fileman:/app"
 
   center:
     build:
@@ -33,7 +33,7 @@ services:
     ports:
     - "5000:5000"
     environment:
-    - "PYMGUR=pymgur"
+    - "FILEMAN=fileman"
     - "NEWS=news"
     - "HEADPAGE=headpage"
     - "ABOUT=about"
