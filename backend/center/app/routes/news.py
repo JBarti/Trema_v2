@@ -1,11 +1,11 @@
 import requests
 from os import environ
 from flask import Blueprint, request, abort
-from .utilities import ImageController, login_required
+from .utilities import FileController, login_required
 
 news_bp = Blueprint("news_api", __name__, url_prefix="/news")
 
-controller = ImageController()
+controller = FileController()
 
 news_host = environ.get("NEWS")
 news_address = f"http://{news_host}:5000/service/news"
@@ -31,10 +31,10 @@ def put():
 @login_required
 def delete():
     data = request.get_json()
-    if "image" in data:
-        img_stat = controller.delete_image(data)
-        if img_stat != 200:
-            return abort(400, "No image with given name has been found to delete.")
+    if "file" in data:
+        file_stat = controller.delete_file(data)
+        if file_stat != 200:
+            return abort(400, "No file with given name has been found to delete.")
     resp = requests.delete(f"{news_address}/", json=data)
     return (resp.text, resp.status_code, resp.headers.items())
 

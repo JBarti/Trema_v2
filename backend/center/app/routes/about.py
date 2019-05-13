@@ -1,15 +1,11 @@
 import requests
 from os import environ
 from flask import Blueprint, request, abort
-from .utilities import ImageController, login_required
+from .utilities import FileController, login_required
 
 about_bp = Blueprint("about_api", __name__, url_prefix="/about")
 
-controller = ImageController()
-
-#######  need file saving system!!!!
-#######  after creating one implement it in this file similar to the way image
-#######  controller has been implemented
+controller = FileController()
 
 about_host = environ.get("ABOUT")
 about_address = f"http://{about_host}:5000/service/about"
@@ -34,10 +30,10 @@ def put(model):
 @login_required
 def delete(model):
     data = request.get_json()
-    if "image" in data:
-        img_stat = controller.delete_image(data)
-        if img_stat != 200:
-            return abort(400, "No image with given name has been found to delete.")
+    if "file" in data:
+        file_stat = controller.delete_file(data)
+        if file_stat != 200:
+            return abort(400, "No file with given name has been found to delete.")
     resp = requests.delete(f"{about_address}/{model}", json=data)
     return (resp.text, resp.status_code, resp.headers.items())
 

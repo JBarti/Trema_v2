@@ -4,23 +4,23 @@ from functools import wraps
 from flask import session, jsonify
 
 
-class ImageController:
+class FileController:
     def __init__(self):
-        self.pymgur_host = pymgur_host = environ.get("PYMGUR")
-        self.pymgur_address = f"http://{self.pymgur_host}:5000/"
+        self.fileman_host = environ.get("FILEMAN")
+        self.fileman_address = f"http://{self.fileman_host}:5000/"
 
-    def handle_image(self, image):
-        image.seek(0)
+    def handle_file(self, file):
+        file.seek(0)
         res = requests.post(
-            self.pymgur_address,
-            files={"img": (image.filename, image.stream, image.mimetype)},
+            self.fileman_address,
+            files={"file": (file.filename, file.stream, file.mimetype)},
         )
         return res
 
-    def delete_image(self, data):
-        if data["image"] == None:
+    def delete_file(self, data):
+        if data["file"] == None:
             return 200
-        resp = requests.delete(f"{self.pymgur_address}delete", json=data)
+        resp = requests.delete(f"{self.fileman_address}delete", json=data)
         return resp.status_code
 
 
