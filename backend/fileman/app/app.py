@@ -2,6 +2,7 @@ from flask import Flask, request, send_file, abort
 from flask_cors import CORS
 from config import dev_config, pro_config
 from os import listdir, remove
+from mimetypes import MimeTypes
 
 app = Flask(__name__, static_url_path="/")
 
@@ -13,7 +14,8 @@ CORS(app)
 @app.route("/<filename>")
 def get(filename):
     try:
-        return send_file(f"./static/{filename}", mimetype="image/gif")
+        mtype = MimeTypes().guess_type(filename)[0]
+        return send_file(f"./static/{filename}", mimetype=mtype)
     except FileNotFoundError:
         return abort(400, "Requested file does not exist.")
 
@@ -21,22 +23,19 @@ def get(filename):
 @app.route("/", methods=["POST"])
 def post():
     try:
-        img = request.files["img"]
+        file = request.files["file"]
     except KeyError:
         return abort(400, "No file sent.")
 
-    if img is None:
+    if file is None:
         return abort(400, "The sent file is empty.")
 
-    filename = img.filename
-    extension = filename.split(".")[1]
-    if extension not in ["jpg", "jpeg", "png", "bmp", "gif", "bpg"]:
-        return abort(400, "File contains unknown extension.")
+    filename = file.filename
 
     if filename in listdir("./app/static"):
         return abort(400, "File with given name already exists.")
 
-    img.save(f"./app/static/{filename}")
+    file.save(f"./app/static/{filename}")
 
     return filename
     # napravit rutu na auth servisu koja ce vata slike samo odavde
