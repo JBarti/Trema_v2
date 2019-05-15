@@ -7,6 +7,18 @@ services:
     volumes:
     - "./news:/app"
 
+  info:
+    build:
+      context: ./info
+    volumes:
+    - "./info:/app"
+
+  contacts:
+    build:
+      context: ./contacts
+    volumes:
+    - "./contacts:/app"
+
   headpage:
     build:
       context: ./headpage
@@ -39,8 +51,10 @@ services:
     ports:
     - "5000:5000"
     environment:
+    - "CONTACTS=contacts"
     - "FILEMAN=fileman"
     - "NEWS=news"
     - "HEADPAGE=headpage"
     - "ABOUT=about"
     - "APPLICATIONS=applications"
+    - "INFO=info"
