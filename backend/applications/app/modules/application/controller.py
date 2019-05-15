@@ -12,12 +12,12 @@ class ApplicationController:
 
     def post_data(self, data):
         try:
-            new_post = Application(**data)
-            if not new_post.str_to_date():
+            new_application = Application(**data)
+            if not new_application.str_to_date():
                 return abort(400, "Date format is not correct.")
 
-            self.db.insert_one(new_post.to_dict())
-            new_post.date_to_str()
+            self.db.insert_one(new_application.to_dict())
+            new_application.date_to_str()
             return jsonify(data)
 
         except TypeError:
@@ -25,15 +25,15 @@ class ApplicationController:
 
     def put_data(self, data):
         try:
-            new_post = Application(**data)
+            new_application = Application(**data)
 
-            if not new_post.str_to_date():
+            if not new_application.str_to_date():
                 return abort(400, "Date format is not correct.")
             if "_id" not in data:
                 return abort(400, "Submitted payload does not have an id.")
 
             status = self.db.update_one(
-                {"_id": ObjectId(data["_id"])}, {"$set": new_post.to_dict()}
+                {"_id": ObjectId(data["_id"])}, {"$set": new_application.to_dict()}
             )
             if status.matched_count == 0:
                 return abort(400, "The submitted id does not exist.")
@@ -70,9 +70,9 @@ class ApplicationController:
 
 
     def jsonify_query(self, query):
-        news = [Application(**post) for post in query]
-        for post in news:
-            post.date_to_str()
-            post._id = str(post._id)
+        applications = [Application(**application) for application in query]
+        for application in applications:
+            application.date_to_str()
+            application._id = str(application._id)
 
-        return jsonify([asdict(post) for post in news])
+        return jsonify([asdict(application) for application in applications])
