@@ -1,1 +1,1 @@
-from .controller import  ContactController
+from .controller import ContactController

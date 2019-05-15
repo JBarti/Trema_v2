@@ -59,7 +59,6 @@ class ApplicationController:
     def get_data(self, args):
         return self.jsonify_query(self.db.find().sort("date", -1))
 
-
     def conv_to_date(self, str_date):
         try:
             date = str_date.split("/")
@@ -67,7 +66,6 @@ class ApplicationController:
             return date_obj
         except (ValueError, IndexError):
             return None
-
 
     def jsonify_query(self, query):
         applications = [Application(**application) for application in query]

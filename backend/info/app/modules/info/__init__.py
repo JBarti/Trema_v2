@@ -1,1 +1,1 @@
-from .controller import  InfoController
+from .controller import InfoController
