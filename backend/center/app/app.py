@@ -1,12 +1,12 @@
-from datetime import timedelta
-from flask import Flask, request, abort, session
-from flask_cors import CORS
-from flask_pymongo import PyMongo
-from config import dev_config, pro_config
-from modules import UsersController
-from uuid import uuid4
-from routes import login_required
 import requests
+from uuid import uuid4
+from flask_cors import CORS
+from datetime import timedelta
+from flask_pymongo import PyMongo
+from routes import login_required
+from modules import UsersController
+from config import dev_config, pro_config
+from flask import Flask, request, abort, session
 
 APP = Flask(__name__)
 dev_config(APP)
@@ -67,11 +67,21 @@ def logout():
 
 
 if __name__ == "__main__":
-    from routes import news_bp, fileman_bp, head_bp, about_bp, application_bp
+    from routes import (
+        news_bp,
+        fileman_bp,
+        head_bp,
+        about_bp,
+        application_bp,
+        contact_bp,
+        info_bp,
+    )
 
-    APP.register_blueprint(news_bp)
-    APP.register_blueprint(about_bp)
-    APP.register_blueprint(application_bp)
     APP.register_blueprint(head_bp)
+    APP.register_blueprint(news_bp)
+    APP.register_blueprint(info_bp)
+    APP.register_blueprint(about_bp)
     APP.register_blueprint(fileman_bp)
+    APP.register_blueprint(contact_bp)
+    APP.register_blueprint(application_bp)
     APP.run(host="0.0.0.0")
