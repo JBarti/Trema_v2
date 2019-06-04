@@ -21,14 +21,14 @@ def root():
     return "<h1>Test route works</h1>"
 
 
-@app.route("/application")
+@app.route("/applications")
 def get():
     args = request.args
     resp = controller.get_data(args)
     return resp
 
 
-@app.route("/application", methods=["POST"])
+@app.route("/applications", methods=["POST"])
 @authorize
 def post():
     data = request.get_json()
@@ -36,7 +36,7 @@ def post():
     return resp
 
 
-@app.route("/application", methods=["PUT"])
+@app.route("/applications", methods=["PUT"])
 @authorize
 def put():
     data = request.get_json()
@@ -44,7 +44,7 @@ def put():
     return resp
 
 
-@app.route("/application", methods=["DELETE"])
+@app.route("/applications", methods=["DELETE"])
 @authorize
 def delete():
     data = request.get_json()
