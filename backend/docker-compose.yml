@@ -6,55 +6,98 @@ services:
       context: ./news
     volumes:
     - "./news:/app"
+    depends_on: 
+      - redis
+    environment:
+    - "REDIS=redis"
 
   info:
     build:
       context: ./info
     volumes:
     - "./info:/app"
-
+    depends_on: 
+      - redis
+    environment:
+    - "REDIS=redis"
+      
   contacts:
     build:
       context: ./contacts
     volumes:
     - "./contacts:/app"
-
+    depends_on: 
+      - redis
+    environment:
+    - "REDIS=redis"
+      
   headpage:
     build:
       context: ./headpage
     volumes:
     - "./headpage:/app"
-
+    depends_on: 
+      - redis
+    environment:
+    - "REDIS=redis"
+      
   applications:
     build:
       context: ./applications
     volumes:
     - "./applications:/app"
-  
+    depends_on: 
+      - redis
+    environment:
+    - "REDIS=redis"
+        
   about:
     build:
       context: ./about
     volumes:
     - "./about:/app"
-
+    depends_on: 
+      - redis
+    environment:
+    - "REDIS=redis"
+      
   fileman:
     build:
       context: ./fileman
     volumes:
     - "./fileman:/app"
-
-  center:
-    build:
-      context: ./center
-    volumes:
-    - "./center:/app"
-    ports:
-    - "5000:5000"
+    depends_on: 
+      - redis
     environment:
-    - "CONTACTS=contacts"
-    - "FILEMAN=fileman"
-    - "NEWS=news"
-    - "HEADPAGE=headpage"
-    - "ABOUT=about"
-    - "APPLICATIONS=applications"
-    - "INFO=info"
+    - "REDIS=redis"
+  
+  users:
+    build:
+      context: ./users
+    volumes:
+      - "./users:/app"
+    depends_on:
+      - redis
+    environment:
+    - "REDIS=redis"
+
+  redis:
+    image: redis
+    container_name: redis
+    restart: always
+  
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:8080"
+    volumes:
+    - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - users
+      - fileman
+      - about
+      - info
+      - news
+      - headpage
+      - applications
+      - contacts

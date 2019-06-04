@@ -1,12 +1,10 @@
 FROM python:3.6-alpine
 
-COPY ./app/requirements.txt /app/requirements.txt
-WORKDIR /app
+COPY ./service/requirements.txt /service/requirements.txt
+WORKDIR /service
 
 RUN pip install -r requirements.txt
 
-COPY ./app /app
+COPY ./service /service
 
-ENTRYPOINT [ "python" ]
-CMD [ "app/app.py" ]
-
+CMD [ "gunicorn", "-b", "0.0.0.0:5000", "wsgi:app" ]

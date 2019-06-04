@@ -7,4 +7,4 @@ RUN pip install -r requirements.txt
 
 COPY ./service /service
 
-CMD [ "gunicorn", "-b", "0.0.0.0:5000", "wsgi:app" ]
+CMD [ "gunicorn", "-b", "0.0.0.0:5000", "wsgi:APP" ]
