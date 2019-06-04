@@ -18,7 +18,7 @@ controller = NewsController(mongo.db)
 
 @app.route("/nevergonnagiveyouup")
 def root():
-    return render_template('index.html')
+    return render_template("index.html")
 
 
 @app.route("/news")

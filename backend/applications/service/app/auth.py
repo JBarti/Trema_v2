@@ -8,6 +8,7 @@ redis_port = 6379
 
 red = Redis(host=redis_host, port=redis_port)
 
+
 def authorize(f):
     @wraps(f)
     def wrapped_func(*args, **kwargs):
@@ -17,12 +18,15 @@ def authorize(f):
                 refresh_cache(session["id"], value)
                 return f(*args, **kwargs)
         return "You are not signed in. Please sign in."
+
     return wrapped_func
+
 
 def redis_check(sess_id):
     value = red.get(sess_id)
     return value
 
+
 def refresh_cache(id, email):
-    red.setex(id, 60*15, email)
+    red.setex(id, 60 * 15, email)
     return None

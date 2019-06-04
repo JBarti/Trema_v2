@@ -16,11 +16,12 @@ CORS(APP)
 
 controller = UsersController(mongo.db)
 
+
 @APP.route("/users/login", methods=["POST"])
 def login():
     if "id" in session:
         value = redis_check(session["id"])
-        if value is not None:
+        if value:
             return abort(400, "You are already logged in.")
     data = request.get_json()
     check = controller.authenticate(data)
@@ -31,6 +32,7 @@ def login():
     session["id"] = id
     session["email"] = data["email"]
     return "Logged in."
+
 
 @APP.route("/users/adduser", methods=["POST"])
 @authorize
@@ -62,6 +64,7 @@ def logout():
         delete_cache(session["id"])
         session.pop("id")
     return "Logged out"
+
 
 if __name__ == "__main__":
     APP.run(host="0.0.0.0")
