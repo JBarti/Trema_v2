@@ -20,7 +20,7 @@ controller = UsersController(mongo.db)
 def login():
     if "id" in session:
         value = redis_check(session["id"])
-        if not value:
+        if value is not None:
             return abort(400, "You are already logged in.")
     data = request.get_json()
     check = controller.authenticate(data)
