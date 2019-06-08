@@ -5,7 +5,7 @@ services:
     build:
       context: ./news
     volumes:
-    - "./news:/app"
+    - "./news:/news"
     depends_on: 
       - redis
     environment:
@@ -25,7 +25,7 @@ services:
     build:
       context: ./contacts
     volumes:
-    - "./contacts:/app"
+    - "./contacts:/contacts"
     depends_on: 
       - redis
     environment:
@@ -35,7 +35,7 @@ services:
     build:
       context: ./headpage
     volumes:
-    - "./headpage:/app"
+    - "./headpage:/headpage"
     depends_on: 
       - redis
     environment:
@@ -45,7 +45,7 @@ services:
     build:
       context: ./applications
     volumes:
-    - "./applications:/app"
+    - "./applications:/applications"
     depends_on: 
       - redis
     environment:
@@ -55,7 +55,7 @@ services:
     build:
       context: ./about
     volumes:
-    - "./about:/app"
+    - "./about:/about"
     depends_on: 
       - redis
     environment:
@@ -65,7 +65,8 @@ services:
     build:
       context: ./fileman
     volumes:
-    - "./fileman:/app"
+    - "./fileman:/fileman"
+    - "./fileman/service/app/static:/service/app/static"
     depends_on: 
       - redis
     environment:
@@ -75,7 +76,7 @@ services:
     build:
       context: ./users
     volumes:
-      - "./users:/app"
+      - "./users:/users"
     depends_on:
       - redis
     environment:

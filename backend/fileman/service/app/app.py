@@ -39,15 +39,12 @@ def post():
 
     file.save(f"./app/static/{filename}")
 
-    return filename
-    # napravit rutu na auth servisu koja ce vata slike samo odavde
+    return f"http://0.0.0.0:8080/fileman/{filename}"
 
 
-@app.route("/fileman", methods=["DELETE"])
+@app.route("/fileman/<filename>", methods=["DELETE"])
 @authorize
-def delete():
-    data = request.get_json()
-    filename = data["file"]
+def delete(filename):
     remove(f"./app/static/{filename}")
     return "Success."
 
