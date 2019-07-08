@@ -7,6 +7,7 @@ import Navbar from "../../components/common/navbar/navbar";
 import SearchBar from "../../components/common/searchBar/searchBar";
 import Title from "../../components/common/title/title";
 import Paraf from "../../components/common/paraf/paraf";
+import NewsDemo from "../../components/newsDemo/newsDemo";
 
 import pozdravnaRijec from "../../data/pozdravnaRijec";
 
@@ -46,6 +47,38 @@ class Home extends Component {
           </div>
         </Block>
         <div className="triangle-decorator" />
+        <Block style={style.block3Style}>
+          <div className="block3__column">
+            <NewsDemo title="test" text="lorem ipsum dolor sit amet" />
+            <NewsDemo title="test" text="lorem ipsum dolor sit amet" />
+          </div>
+          <div className="block3__column block3__column--right">
+            <NewsDemo title="test" text="lorem ipsum dolor sit amet" />
+            <NewsDemo title="test" text="lorem ipsum dolor sit amet" />
+          </div>
+        </Block>
+        <Block style={style.block4Style}>
+          <div>
+            <div className="achievment__image" />
+            <Title> lorem ipsum</Title>
+            <Title> lorem ipsum</Title>
+          </div>
+          <div>
+            <div className="achievment__image" />
+            <Title> lorem ipsum</Title>
+            <Title> lorem ipsum</Title>
+          </div>
+          <div>
+            <div className="achievment__image" />
+            <Title> lorem ipsum</Title>
+            <Title> lorem ipsum</Title>
+          </div>
+          <div>
+            <div className="achievment__image" />
+            <Title> lorem ipsum</Title>
+            <Title> lorem ipsum</Title>
+          </div>
+        </Block>
       </div>
     );
   }
