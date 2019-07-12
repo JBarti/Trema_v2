@@ -9,6 +9,7 @@
   font-variant: none;
   font-family: "Myriad Pro Regular";
   transition: 0.4s;
+  opacity: 0;
 }
 
 .search-txt::placeholder {
@@ -19,6 +20,7 @@
 .search-box:hover > .search-txt {
   width: 150px;
   padding: 0 6px;
+  opacity: 1;
 }
 
 .search-btn {

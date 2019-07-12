@@ -37,34 +37,10 @@ const Style = {
         color: "red"
     },
 
-  block2ParafStyle: {
-    height: "200px",
-    width: "600px"
-  },
-
-  block3Style: {
-    backgroundColor: "gray",
-    height: "70vh",
-    justifyContent: "space-between",
-    alignItems: "flex-start",
-    flexDirection: "row",
-    padding: "100px 450px"
-  },
-
-  newsDemoTitleStyle: {
-    textTransform: "uppercase",
-    fontSize: "16px",
-    marginBottom: "20px"
-  },
-
-  block4Style: {
-    height: "200px",
-    backgroundColor: "darkgray",
-    padding: "50px 400px",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center"
-  }
+    block2ParafStyle: {
+        height: "200px",
+        width: "600px"
+    }
 };
 
 export default Style;

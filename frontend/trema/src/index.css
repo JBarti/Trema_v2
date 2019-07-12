@@ -8,6 +8,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-family: "Myriad Pro Regular";
+  src: url("assets/fonts/Myriad Pro Regular.ttf");
+  font-weight: bold;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
