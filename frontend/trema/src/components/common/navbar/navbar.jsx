@@ -11,9 +11,9 @@ const STYLE_VARIANT_CASES = {
 };
 
 const Navbar = (props) => {
-  const { children, style } = props;
+  const { children, variant } = props;
   return (
-    <div className='navbar' style={STYLE_VARIANT_CASES[style]}>
+    <div className='navbar' style={STYLE_VARIANT_CASES[variant]}>
       {children}
     </div>
   );
@@ -21,7 +21,7 @@ const Navbar = (props) => {
 
 
 const MainNavbar = () => (
-  <Navbar style={styleVariants.mainNavbarStyle}>
+  <Navbar variant='main'>
     <p>naslovnica</p>
     <p>novosti</p>
     <p>o nama</p>
@@ -32,7 +32,7 @@ const MainNavbar = () => (
 );
 
 const SideNavbar = () => (
-  <Navbar style={styleVariants.sideNavbarStyle}>
+  <Navbar variant='side'>
     <p>raspored sati</p>
     <p>vremenik pismenih provjera</p>
     <p>tlocrt škole</p>
@@ -41,13 +41,15 @@ const SideNavbar = () => (
   </Navbar>
 );
 
+console.log(Object.keys(STYLE_VARIANT_CASES));
+
 Navbar.propTypes = {
-  style: PropTypes.oneOf(Object.keys(STYLE_VARIANT_CASES)),
-  children: PropTypes.elementType,
+  variant: PropTypes.oneOf(['default', 'main', 'side']),
+  children: PropTypes.any,
 };
 
 Navbar.defaultProps = {
-  style: 'default',
+  variant: 'default',
   children: '',
 };
 

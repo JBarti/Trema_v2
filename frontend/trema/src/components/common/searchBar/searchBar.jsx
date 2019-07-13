@@ -1,5 +1,4 @@
-import React from 'react';
-import Fragment from 'react-dom';
+import React, { Fragment } from 'react';
 import './searchBar.css';
 
 const SearchBar = () => (

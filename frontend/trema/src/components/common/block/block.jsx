@@ -5,28 +5,28 @@ import './block.css';
 
 const STYLE_VARIANT_CASES = {
   default: {},
+  block1: StyleVariants.block1Style,
   block2: StyleVariants.block2Style,
   block3: StyleVariants.block3Style,
-  block1: StyleVariants.block1Style,
   block4: StyleVariants.block4Style,
 };
 
 const Block = (props) => {
-  const { children, style } = props;
+  const { children, variant } = props;
   return (
-    <div className='block' style={STYLE_VARIANT_CASES[style]}>
+    <div className='block' style={STYLE_VARIANT_CASES[variant]}>
       {children}
     </div>
   );
 };
 
 Block.propTypes = {
-  style: PropTypes.oneOf(Object.keys(STYLE_VARIANT_CASES)),
-  children: PropTypes.elementType,
+  variant: PropTypes.oneOf(Object.keys(STYLE_VARIANT_CASES)),
+  children: PropTypes.any,
 };
 
 Block.defaultProps = {
-  style: 'default',
+  variant: 'default',
   children: '',
 };
 

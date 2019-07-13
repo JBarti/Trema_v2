@@ -10,21 +10,21 @@ const STYLE_VARIANT_CASES = {
 };
 
 const Title = (props) => {
-  const { children, style } = props;
+  const { children, variant } = props;
   return (
-    <div style={STYLE_VARIANT_CASES[style]} className='title'>
+    <div style={STYLE_VARIANT_CASES[variant]} className='title'>
       {children}
     </div>
   );
 };
 
 Title.propTypes = {
-  style: PropTypes.oneOf(Object.keys(STYLE_VARIANT_CASES)),
-  children: PropTypes.elementType,
+  variant: PropTypes.oneOf(Object.keys(STYLE_VARIANT_CASES)),
+  children: PropTypes.any,
 };
 
 Title.defaultProps = {
-  style: 'default',
+  variant: 'default',
   children: '',
 };
 

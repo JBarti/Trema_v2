@@ -11,21 +11,21 @@ const STYLE_VARIANT_CASES = {
 
 
 const Paraf = (props) => {
-  const { children, style } = props;
+  const { children, variant } = props;
   return (
-    <div style={STYLE_VARIANT_CASES[style]} className='paraf'>
+    <div style={STYLE_VARIANT_CASES[variant]} className='paraf'>
       {children}
     </div>
   );
 };
 
 Paraf.propTypes = {
-  style: PropTypes.oneOf(Object.keys(STYLE_VARIANT_CASES)),
-  children: PropTypes.elementType,
+  variant: PropTypes.oneOf(Object.keys(STYLE_VARIANT_CASES)),
+  children: PropTypes.any,
 };
 
 Paraf.defaultProps = {
-  style: 'default',
+  variant: 'default',
   children: '',
 };
 
