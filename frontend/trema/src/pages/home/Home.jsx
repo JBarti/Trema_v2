@@ -39,27 +39,27 @@ const Home = () => (
     </Block>
     <Block style={style.block4Style}>
       <div>
-        <div className='achievment__image' />
+        <div className='achievement__image' />
         <Title> lorem ipsum</Title>
         <Title> lorem ipsum</Title>
       </div>
       <div>
-        <div className='achievment__image' />
+        <div className='achievement__image' />
         <Title> lorem ipsum</Title>
         <Title> lorem ipsum</Title>
       </div>
       <div>
-        <div className='achievment__image' />
+        <div className='achievement__image' />
         <Title> lorem ipsum</Title>
         <Title> lorem ipsum</Title>
       </div>
       <div>
-        <div className='achievment__image' />
+        <div className='achievement__image' />
         <Title> lorem ipsum</Title>
         <Title> lorem ipsum</Title>
       </div>
     </Block>
   </div>
-)
+);
 
 export default Home;
