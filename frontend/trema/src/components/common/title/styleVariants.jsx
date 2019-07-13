@@ -1,4 +1,4 @@
-const Style = {
+const styleVariant = {
   block2TitleStyle: {
     fontSize: '54px',
     position: 'relative',
@@ -12,7 +12,6 @@ const Style = {
     fontSize: '16px',
     marginBottom: '20px',
   },
-
 };
 
-export default Style;
+export default styleVariant;
