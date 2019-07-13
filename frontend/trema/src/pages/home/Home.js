@@ -3,7 +3,7 @@ import "./Home.css";
 import style from "./Style";
 
 import Block from "../../components/common/block/block";
-import {MainNavbar, SideNavbar} from "../../components/common/navbar";
+import { MainNavbar, SideNavbar } from "../../components/common/navbar";
 import SearchBar from "../../components/common/searchBar/searchBar";
 import Title from "../../components/common/title/title";
 import Paraf from "../../components/common/paraf/paraf";
@@ -22,8 +22,8 @@ class Home extends Component {
         <Block style={style.block1Style}>
           <div className="block1__background" />
         </Block>
-        <MainNavbar/>
-        <SideNavbar/>
+        <MainNavbar />
+        <SideNavbar />
         <Block style={style.block2Style}>
           <div className="image__ravnateljica" />
           <div className="block2__text">
