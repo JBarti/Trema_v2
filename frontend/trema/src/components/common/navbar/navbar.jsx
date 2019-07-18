@@ -41,8 +41,6 @@ const SideNavbar = () => (
   </Navbar>
 );
 
-console.log(Object.keys(STYLE_VARIANT_CASES));
-
 Navbar.propTypes = {
   variant: PropTypes.oneOf(['default', 'main', 'side']),
   children: PropTypes.any,
