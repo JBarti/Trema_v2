@@ -5,7 +5,7 @@ const styleVariant = {
 
   block2Style: {
     backgroundColor: 'darkgray',
-    height: '700px',
+    height: '80vh',
     justifyContent: 'flex-start',
     flexDirection: 'row',
     padding: '0 0 0 150px',
@@ -36,6 +36,14 @@ const styleVariant = {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+  },
+
+  block6Style: {
+    height: '90vh',
+    backgroundColor: 'darkgray',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 };
 

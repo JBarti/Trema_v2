@@ -64,6 +64,11 @@ const Home = () => (
       <div className='block5__image' />
       <div className='block5__image' />
     </Block>
+    <Block variant='block6'>
+      <div className='block6__image' />
+      <div className='block6__image' />
+      <Paraf variant='block6'>Lorem ipsum dolor sit amet</Paraf>
+    </Block>
   </div>
 );
 

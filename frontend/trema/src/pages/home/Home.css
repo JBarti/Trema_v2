@@ -53,3 +53,10 @@
   height: 150px;
   width: 20%;
 }
+
+.block6__image {
+  background: 'white';
+  height: 100%;
+  flex-grow: 1;
+  border-right: solid 1px black;
+}
