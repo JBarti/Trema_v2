@@ -58,6 +58,12 @@ const Home = () => (
         <Title> lorem ipsum</Title>
       </div>
     </Block>
+    <Block variant='block5'>
+      <div className='block5__image' />
+      <div className='block5__image' />
+      <div className='block5__image' />
+      <div className='block5__image' />
+    </Block>
   </div>
 );
 

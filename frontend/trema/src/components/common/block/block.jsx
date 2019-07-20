@@ -9,9 +9,10 @@ const STYLE_VARIANT_CASES = {
   block2: StyleVariants.block2Style,
   block3: StyleVariants.block3Style,
   block4: StyleVariants.block4Style,
+  block5: StyleVariants.block5Style,
 };
 
-const Block = props => {
+const Block = (props) => {
   const { children, variant } = props;
   return (
     <div className='block' style={STYLE_VARIANT_CASES[variant]}>

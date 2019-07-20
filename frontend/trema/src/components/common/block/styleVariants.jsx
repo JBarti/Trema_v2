@@ -28,6 +28,15 @@ const styleVariant = {
     justifyContent: 'space-between',
     alignItems: 'center',
   },
+
+  block5Style: {
+    height: '200px',
+    backgroundColor: 'gray',
+    padding: '25px 100px',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
 };
 
 export default styleVariant;
