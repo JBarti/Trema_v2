@@ -11,6 +11,7 @@ const STYLE_VARIANT_CASES = {
   block4: StyleVariants.block4Style,
   block5: StyleVariants.block5Style,
   block6: StyleVariants.block6Style,
+  block7: StyleVariants.block7Style,
 };
 
 const Block = (props) => {

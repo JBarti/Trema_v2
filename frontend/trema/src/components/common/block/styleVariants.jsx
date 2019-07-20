@@ -45,6 +45,15 @@ const styleVariant = {
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  block7Style: {
+    height: '60vh',
+    backgroundColor: 'gray',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: '100px 200px',
+  },
 };
 
 export default styleVariant;
