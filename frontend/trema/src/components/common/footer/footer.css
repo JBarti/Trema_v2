@@ -1,0 +1,29 @@
+.footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Myriad Pro Regular";
+  color: white;
+  position: relative;
+}
+.white{
+  color: white;
+}
+.bold{
+  font-size: 20px;
+}
+.dot{
+  height: 25px;
+  width: 25px;
+  background-color: rgb(64, 104, 105);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 2%;
+}
+.height0{
+  margin-top: 2%;
+}
+.height1{
+  margin-top: 0.8%;
+}

@@ -3,6 +3,7 @@ import './Home.css';
 
 import Block from '../../components/common/block/block';
 import { MainNavbar, SideNavbar } from '../../components/common/navbar';
+import { Footer0, Footer1 } from '../../components/common/footer/footer';
 import Title from '../../components/common/title/title';
 import Paraf from '../../components/common/paraf/paraf';
 import NewsDemo from './components/newsDemo/newsDemo';
@@ -58,6 +59,8 @@ const Home = () => (
         <Title> lorem ipsum</Title>
       </div>
     </Block>
+    <Footer0 />
+    <Footer1 />
   </div>
 );
 
