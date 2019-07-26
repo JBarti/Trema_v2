@@ -1,7 +1,6 @@
 import React from 'react';
 import './news.css';
 import { MainNavbar, SideNavbar } from '../../components/common/navbar';
-import { Footer0, Footer1 } from '../../components/common/footer/footer';
 import Block from '../../components/common/block/block';
 
 
@@ -18,8 +17,6 @@ const News = () => (
       <div className='content__right' />
     </div>
     <Block />
-    <Footer0 />
-    <Footer1 />
   </div>
 );
 
