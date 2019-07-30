@@ -11,13 +11,13 @@
   padding: 0 350px;
   opacity: '0.86';
 }
-.footer0{
+.footer--height{
   height: 50px;
 }
-.white{
+.footer--text-color-white{
   color: white;
 }
-.bold{
+.footer__div--bigger-text{
   font-size: 20px;
 }
 .dot{
@@ -28,9 +28,9 @@
   display: inline-block;
   margin-right: 2%;
 }
-.height0{
+.footer__div--height0{
   margin-top: 2%;
 }
-.height1{
+.footer__div--height1{
   margin-top: 0.8%;
 }
