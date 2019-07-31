@@ -1,0 +1,36 @@
+.footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Myriad Pro Regular";
+  color: white;
+  position: relative;
+  background-color: cadetblue;
+  height: 130px;
+  padding: 0 350px;
+  opacity: '0.86';
+}
+.footer--height{
+  height: 50px;
+}
+.footer--text-color-white{
+  color: white;
+}
+.footer__div--bigger-text{
+  font-size: 20px;
+}
+.dot{
+  height: 25px;
+  width: 25px;
+  background-color: rgb(64, 104, 105);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 2%;
+}
+.footer__div--height0{
+  margin-top: 2%;
+}
+.footer__div--height1{
+  margin-top: 0.8%;
+}
