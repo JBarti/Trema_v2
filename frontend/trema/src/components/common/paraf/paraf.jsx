@@ -7,6 +7,7 @@ import './paraf.css';
 const STYLE_VARIANT_CASES = {
   default: {},
   block2: styleVariants.block2ParafStyle,
+  block6: styleVariants.block6ParagraphStyle,
 };
 
 

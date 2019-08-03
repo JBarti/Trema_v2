@@ -5,7 +5,7 @@ const styleVariant = {
 
   block2Style: {
     backgroundColor: 'darkgray',
-    height: '700px',
+    height: '80vh',
     justifyContent: 'flex-start',
     flexDirection: 'row',
     padding: '0 0 0 150px',
@@ -27,6 +27,32 @@ const styleVariant = {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+  },
+
+  block5Style: {
+    height: '200px',
+    backgroundColor: 'gray',
+    padding: '25px 100px',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+
+  block6Style: {
+    height: '90vh',
+    backgroundColor: 'darkgray',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  block7Style: {
+    height: '60vh',
+    backgroundColor: 'gray',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: '100px 200px',
   },
 };
 

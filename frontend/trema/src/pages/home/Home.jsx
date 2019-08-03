@@ -58,6 +58,109 @@ const Home = () => (
         <Title> lorem ipsum</Title>
       </div>
     </Block>
+    <Block variant='block5'>
+      <div className='block5__image' />
+      <div className='block5__image' />
+      <div className='block5__image' />
+      <div className='block5__image' />
+    </Block>
+    <Block variant='block6'>
+      <div className='block6__image' />
+      <div className='block6__image' />
+      <Paraf variant='block6'>Lorem ipsum dolor sit amet</Paraf>
+    </Block>
+    <Block variant='block7'>
+      <div className='block7__row block7__row--short'>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+      </div>
+      <div className='block7__row'>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+      </div>
+      <div className='block7__row block7__row--short'>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+        <div className='subject-wrapper'>
+          <div className='subject-image' />
+          <Title>Lorem ipsum</Title>
+        </div>
+      </div>
+    </Block>
   </div>
 );
 
