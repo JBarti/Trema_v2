@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styleVariants from './styleVariants';
-import './paraf.css';
+import styles from './paraf.module.css';
 
 
 const STYLE_VARIANT_CASES = {
@@ -13,7 +13,7 @@ const STYLE_VARIANT_CASES = {
 const Paraf = (props) => {
   const { children, variant } = props;
   return (
-    <div style={STYLE_VARIANT_CASES[variant]} className='paraf'>
+    <div style={STYLE_VARIANT_CASES[variant]} className={styles['paraf']}>
       {children}
     </div>
   );

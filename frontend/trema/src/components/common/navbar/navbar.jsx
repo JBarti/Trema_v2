@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './navbar.css';
+import styles from './navbar.module.css';
 import styleVariants from './styleVariants';
 import SearchBar from '../searchBar/searchBar';
 
@@ -13,7 +13,7 @@ const STYLE_VARIANT_CASES = {
 const Navbar = (props) => {
   const { children, variant } = props;
   return (
-    <div className='navbar' style={STYLE_VARIANT_CASES[variant]}>
+    <div className={styles['navbar']} style={STYLE_VARIANT_CASES[variant]}>
       {children}
     </div>
   );
@@ -27,7 +27,7 @@ const MainNavbar = () => (
     <p>o nama</p>
     <p>informacije</p>
     <p>natječaji</p>
-    <div className='search__container'>
+    <div className={styles['search__container']}>
       <SearchBar isAnimated />
     </div>
   </Navbar>

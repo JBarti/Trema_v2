@@ -37,7 +37,7 @@ const TagFilter = () => (
     <div className={styles['content__searchbar']}>
       <SearchBar isAnimated={false} style={{ width: '100%' }} />
     </div>
-    <div className={styles.tag__list}>
+    <div className={styles['tag__list']}>
       <TagElement name='Lorem ipsum' />
       <TagElement name='Lorem ipsum' />
       <TagElement name='Lorem ipsum' />

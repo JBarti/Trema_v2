@@ -7,15 +7,15 @@ import TagFilter from './components/tagFilter/tagFilter';
 
 const News = () => (
   <div>
-    <div className={styles.news__heading}>
-      <div className={styles.heading__flag} />
+    <div className={styles['news__heading']}>
+      <div className={styles['heading__flag']} />
     </div>
     <MainNavbar />
     <SideNavbar />
-    <div className={styles.news__content}>
+    <div className={styles['news__content']}>
       <TagFilter />
-      <div className={styles.content__middle} />
-      <div className={styles.content__right} />
+      <div className={styles['content__middle']} />
+      <div className={styles['content__right']} />
     </div>
     <Block />
   </div>

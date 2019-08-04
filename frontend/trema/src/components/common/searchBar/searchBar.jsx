@@ -1,16 +1,16 @@
 import React from 'react';
-import './searchBar.css';
 import PropTypes from 'prop-types';
+import styles from './searchBar.module.css';
 
 
 const SearchBar = (props) => {
   const { isAnimated, placeholder } = props;
-  const searchTxtClassName = `search-txt ${isAnimated ? 'search-txt__animated' : ''}`;
+  const searchTxtClassName = `${styles['search-txt']} ${isAnimated ? styles['search-txt__animated'] : ''}`;
   return (
-    <div className='search-box'>
+    <div className={styles['search-box']}>
       <input className={searchTxtClassName} type='text' placeholder={placeholder} />
-      <a className='search-btn'>
-        <i className='fas fa-search' />
+      <a className={styles['search-btn']}>
+        <i className={`${styles['fas']} ${styles['fa-search']}`} />
       </a>
     </div>
   );

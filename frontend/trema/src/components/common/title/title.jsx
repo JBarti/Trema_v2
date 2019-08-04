@@ -1,6 +1,6 @@
 import React from 'react';
-import './title.css';
 import PropTypes from 'prop-types';
+import styles from './title.module.css';
 import StyleVariant from './styleVariants';
 
 const STYLE_VARIANT_CASES = {
@@ -12,7 +12,7 @@ const STYLE_VARIANT_CASES = {
 const Title = (props) => {
   const { children, variant } = props;
   return (
-    <div style={STYLE_VARIANT_CASES[variant]} className='title'>
+    <div style={STYLE_VARIANT_CASES[variant]} className={styles['title']}>
       {children}
     </div>
   );
