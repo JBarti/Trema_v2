@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './index.css';
 import App from './pages/test/App';
-import Home from './pages/home/Home';
-import News from './pages/news/News';
+import Home from './pages/home/home';
+import News from './pages/news/news';
 
 const routes = (
   <BrowserRouter>

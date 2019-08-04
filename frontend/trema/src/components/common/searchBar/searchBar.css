@@ -5,19 +5,25 @@
   background-color: transparent;
   border: none;
   border-bottom: solid 2px white;
-  width: 0px;
   font-variant: none;
   font-family: "Myriad Pro Regular";
   transition: 0.4s;
+  opacity: 1;
+  width: calc(100% - 30px);
+}
+
+.search-txt__animated {
+  width: 0;
   opacity: 0;
 }
+
 
 .search-txt::placeholder {
   color: white;
   opacity: 1;
 }
 
-.search-box:hover > .search-txt {
+.search-box:hover > .search-txt__animated {
   width: 150px;
   padding: 0 6px;
   opacity: 1;
@@ -32,9 +38,4 @@
 .fa-search {
   color: white;
   size: 20px 20px;
-}
-
-.search-box {
-  position: absolute;
-  right: 50px;
 }

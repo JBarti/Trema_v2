@@ -22,6 +22,7 @@
     ],
     "rules": {
         "linebreak-style": "off",
+        "dot-notation": "warn",
         "jsx-quotes": [
             "error",
             "prefer-single"

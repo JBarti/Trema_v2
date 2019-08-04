@@ -8,3 +8,8 @@
   position: relative;
   text-transform: uppercase;
 }
+
+.search__container {
+  position: absolute;
+  right: 50px;
+}

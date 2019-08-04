@@ -27,7 +27,9 @@ const MainNavbar = () => (
     <p>o nama</p>
     <p>informacije</p>
     <p>natječaji</p>
-    <SearchBar />
+    <div className='search__container'>
+      <SearchBar isAnimated />
+    </div>
   </Navbar>
 );
 
