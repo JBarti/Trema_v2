@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import StyleVariants from './styleVariants';
-import './block.css';
+import styles from './block.module.css';
 
 const STYLE_VARIANT_CASES = {
   default: {},
@@ -14,7 +14,7 @@ const STYLE_VARIANT_CASES = {
 const Block = (props) => {
   const { children, variant } = props;
   return (
-    <div className='block' style={STYLE_VARIANT_CASES[variant]}>
+    <div className={styles['block']} style={STYLE_VARIANT_CASES[variant]}>
       {children}
     </div>
   );

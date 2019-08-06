@@ -11,15 +11,19 @@
   padding: 0 350px;
   opacity: '0.86';
 }
+
 .footer--height{
   height: 50px;
 }
+
 .footer--text-color-white{
   color: white;
 }
+
 .footer__div--bigger-text{
   font-size: 20px;
 }
+
 .dot{
   height: 25px;
   width: 25px;
@@ -28,9 +32,11 @@
   display: inline-block;
   margin-right: 2%;
 }
+
 .footer__div--height0{
   margin-top: 2%;
 }
+
 .footer__div--height1{
   margin-top: 0.8%;
 }

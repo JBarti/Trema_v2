@@ -27,21 +27,20 @@ class News extends React.Component {
   render() {
     return (
       <div>
-        <div className={styles.news__heading}>
-          <div className={styles.heading__flag} />
+        <div className={styles['news__heading']}>
+          <div className={styles['heading__flag']} />
         </div>
         <MainNavbar />
         <SideNavbar />
-        <div className={styles.news__content}>
+        <div className={styles['news__content']}>
           <TagFilter tagNames={this.tagNames} onChange={this.onTagsChange} />
-          <div className={styles.content__middle} />
-          <div className={styles.content__right} />
+          <div className={styles['content__middle']} />
+          <div className={styles['content__right']} />
         </div>
         <Block />
       </div>
     );
   }
 }
-
 
 export default News;

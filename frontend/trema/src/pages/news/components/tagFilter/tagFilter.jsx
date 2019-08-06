@@ -17,9 +17,9 @@ const TagElement = (props) => {
       onClick={onClick}
       tabIndex={0}
       role='button'
-      className={styles.tag__text}
+      className={styles['tag__text']}
     >
-      <span className={`${styles.tag__select} ${styles[tagClassName]}`}>#</span>
+      <span className={`${styles['tag__select']} ${styles[tagClassName]}`}>#</span>
       {name}
     </div>
   );
@@ -79,10 +79,10 @@ class TagFilter extends React.Component {
     const tagObjects = Object.values(tags);
     return (
       <div className={styles['content-left']}>
-        <div className={styles.content__searchbar}>
+        <div className={styles['content__searchbar']}>
           <SearchBar value={searchValue} onChange={this.onSearchChange} isAnimated={false} style={{ width: '100%' }} />
         </div>
-        <div className={styles.tag__list}>
+        <div className={styles['tag__list']}>
           {tagObjects
             .filter(tag => tag.name.indexOf(searchValue) > -1)
             .map((tag, index) => (
