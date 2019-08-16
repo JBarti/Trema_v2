@@ -26,7 +26,6 @@
 }
 
 .content--middle {
-    background-color: green;
     flex: 2.4;
     display: flex;
     flex-direction: column;

@@ -5,6 +5,7 @@ import Block from '../../components/common/block/block';
 import TagFilter from './components/tagFilter/tagFilter';
 import MonthPicker from './components/monthPicker/monthPicker';
 import NewsPin from './components/newsPin/newsPin';
+import NewsPreview from './components/newspreview/NewsPreview';
 
 
 class News extends React.Component {
@@ -38,6 +39,13 @@ class News extends React.Component {
           <TagFilter tagNames={this.tagNames} onChange={this.onTagsChange} />
           <div className={styles['content--middle']}>
             <MonthPicker />
+            <NewsPreview data={{
+              title: 'Lorem Ipsum',
+              createdAt: new Date(),
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+              imageURL: 'https://picsum.photos/1100/600',
+            }}
+            />
           </div>
           <div className={styles['content--right']}>
             <NewsPin data={{
