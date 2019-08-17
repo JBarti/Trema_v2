@@ -1,0 +1,44 @@
+.picker {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    background-color: white;
+    padding-bottom: 10px;
+    height: 30px;
+}
+
+.picker__month {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 18px;
+    margin-left: 15px;
+    margin-right: 15px;
+    transition: font-size 0.25s;
+    color: gray;
+}
+
+.picker__month:hover {
+    font-size: 22px;
+    color: black;
+}
+
+.picker__month--selected {
+    font-size: 22px;
+    color: black;
+    transition: color 0.15s;
+}
+
+.picker__month--selected:hover {
+    color: red;
+}
+
+.picker__month:focus {
+    outline: none;
+}
+
+.picker__divider {
+    height: 100%;
+    width: 2px;
+    background-color: lightgray;
+}

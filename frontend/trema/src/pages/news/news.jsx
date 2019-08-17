@@ -3,6 +3,7 @@ import styles from './news.module.css';
 import { MainNavbar, SideNavbar } from '../../components/common/navbar';
 import Block from '../../components/common/block/block';
 import TagFilter from './components/tagFilter/tagFilter';
+import MonthPicker from './components/monthPicker/monthPicker';
 
 
 class News extends React.Component {
@@ -34,7 +35,9 @@ class News extends React.Component {
         <SideNavbar />
         <div className={styles['news__content']}>
           <TagFilter tagNames={this.tagNames} onChange={this.onTagsChange} />
-          <div className={styles['content__middle']} />
+          <div className={styles['content__middle']}>
+            <MonthPicker />
+          </div>
           <div className={styles['content__right']} />
         </div>
         <Block />

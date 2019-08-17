@@ -28,6 +28,8 @@
 .content__middle {
     background-color: green;
     flex: 2;
+    display: flex;
+    flex-direction: column;
 }
 
 .content__right {
