@@ -8,6 +8,7 @@ const styleVariants = {
     marginTop: '-60px',
     position: 'sticky',
     top: '0',
+    zIndex: '3',
   },
 
   sideNavbarStyle: {

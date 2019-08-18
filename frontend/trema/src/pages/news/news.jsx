@@ -4,6 +4,7 @@ import { MainNavbar, SideNavbar } from '../../components/common/navbar';
 import Block from '../../components/common/block/block';
 import TagFilter from './components/tagFilter/tagFilter';
 import MonthPicker from './components/monthPicker/monthPicker';
+import NewsPin from './components/newsPin/newsPin';
 
 
 class News extends React.Component {
@@ -35,10 +36,18 @@ class News extends React.Component {
         <SideNavbar />
         <div className={styles['news__content']}>
           <TagFilter tagNames={this.tagNames} onChange={this.onTagsChange} />
-          <div className={styles['content__middle']}>
+          <div className={styles['content--middle']}>
             <MonthPicker />
           </div>
-          <div className={styles['content__right']} />
+          <div className={styles['content--right']}>
+            <NewsPin data={{
+              title: 'Lorem ipsum',
+              createdAt: new Date(),
+              description: 'Lorem ipsum dolor sit amet nesto nesto nesto',
+              imageURL: 'https://picsum.photos/292/160',
+            }}
+            />
+          </div>
         </div>
         <Block />
       </div>
