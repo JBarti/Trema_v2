@@ -5,6 +5,11 @@ import './index.css';
 import App from './pages/test/App';
 import Home from './pages/home/Home';
 import News from './pages/news/News';
+import store from './store';
+
+store.subscribe(() => {
+  console.log('STORE CHANGED', store.getState());
+});
 
 const routes = (
   <BrowserRouter>
