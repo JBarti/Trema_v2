@@ -6,6 +6,7 @@ import { MainNavbar, SideNavbar } from '../../components/common/navbar';
 import Title from '../../components/common/title/title';
 import Paraf from '../../components/common/paraf/paraf';
 import NewsDemo from './components/newsDemo/newsDemo';
+import TriangleDecorator from '../../components/common/triangleDecorator/triangleDecorator';
 
 import pozdravnaRijec from '../../data/pozdravnaRijec';
 
@@ -25,7 +26,7 @@ const Home = () => (
         <Paraf variant='block2'>{pozdravnaRijec}</Paraf>
       </div>
     </Block>
-    <div className={styles['triangle-decorator']} />
+    <TriangleDecorator />
     <Block variant='block3'>
       <div className={styles['block3__column']}>
         <NewsDemo title='test' text='lorem ipsum dolor sit amet' />
