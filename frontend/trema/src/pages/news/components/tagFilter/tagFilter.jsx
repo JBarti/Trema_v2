@@ -78,7 +78,7 @@ class TagFilter extends React.Component {
     const { tags, searchValue } = this.state;
     const tagObjects = Object.values(tags);
     return (
-      <div className={styles['content-left']}>
+      <div className={styles['content--left']}>
         <div className={styles['content__searchbar']}>
           <SearchBar value={searchValue} onChange={this.onSearchChange} isAnimated={false} style={{ width: '100%' }} />
         </div>
