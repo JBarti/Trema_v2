@@ -5,12 +5,15 @@ import './index.css';
 import App from './pages/test/App';
 import Home from './pages/home/home';
 import News from './pages/news/news';
+import AboutUs from './pages/aboutUs/aboutUs';
+
 
 const routes = (
   <BrowserRouter>
     <Switch>
       <Route exact path='/test' component={App} />
       <Route exact path='/novosti' component={News} />
+      <Route exact path='/aboutUs' component={AboutUs} />
       <Route exact path='' component={Home} />
     </Switch>
   </BrowserRouter>
