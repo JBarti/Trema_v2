@@ -1,0 +1,17 @@
+.schoolHistory__container {
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #3b4f68;
+    color: white;
+    height: 500px;
+}
+.schoolHistory__image {
+    height: 100%;
+    flex: 1;
+}
+.schoolHistory__text {
+    flex: 1;
+    padding: 90px;   
+}
