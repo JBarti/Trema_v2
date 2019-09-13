@@ -21,6 +21,7 @@
 .picker__month:hover {
     font-size: 22px;
     color: black;
+    cursor: pointer;
 }
 
 .picker__month--selected {
