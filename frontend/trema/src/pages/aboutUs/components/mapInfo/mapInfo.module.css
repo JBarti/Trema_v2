@@ -1,0 +1,26 @@
+.map__info__container {
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #5f9ea0;
+    color: white;
+    height: 750px;
+    padding: 2%;
+}
+.info__text {
+   margin-top: 1%;
+   margin-right: 18%;
+}
+.text__address {
+    font-size: 22px;
+    list-style-image: url('');
+}
+.text__phoneNumber {
+    margin-top: 5%;   
+    font-size: 22px;
+}
+.text__email {
+    margin-top: 5%;
+    font-size: 22px;
+}
