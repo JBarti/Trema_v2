@@ -1,0 +1,60 @@
+version: '3.5'
+
+services:
+  news: 
+    build:
+      context: ./news
+    volumes:
+    - "./news:/app"
+
+  info:
+    build:
+      context: ./info
+    volumes:
+    - "./info:/app"
+
+  contacts:
+    build:
+      context: ./contacts
+    volumes:
+    - "./contacts:/app"
+
+  headpage:
+    build:
+      context: ./headpage
+    volumes:
+    - "./headpage:/app"
+
+  applications:
+    build:
+      context: ./applications
+    volumes:
+    - "./applications:/app"
+  
+  about:
+    build:
+      context: ./about
+    volumes:
+    - "./about:/app"
+
+  fileman:
+    build:
+      context: ./fileman
+    volumes:
+    - "./fileman:/app"
+
+  center:
+    build:
+      context: ./center
+    volumes:
+    - "./center:/app"
+    ports:
+    - "5000:5000"
+    environment:
+    - "CONTACTS=contacts"
+    - "FILEMAN=fileman"
+    - "NEWS=news"
+    - "HEADPAGE=headpage"
+    - "ABOUT=about"
+    - "APPLICATIONS=applications"
+    - "INFO=info"
