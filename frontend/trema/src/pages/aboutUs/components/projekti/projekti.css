@@ -1,0 +1,14 @@
+.projekti__container {
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #5d99b1;
+    color: white;
+    height: 500px;
+}
+
+.projekti__text {
+    flex: 1;
+    padding: 90px;
+}
