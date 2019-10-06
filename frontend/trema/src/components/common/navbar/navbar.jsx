@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import styles from './navbar.module.css';
 import styleVariants from './styleVariants';
 import SearchBar from '../searchBar/searchBar';
+
 
 const STYLE_VARIANT_CASES = {
   default: {},
@@ -22,9 +24,9 @@ const Navbar = (props) => {
 
 const MainNavbar = () => (
   <Navbar variant='main'>
-    <p>naslovnica</p>
-    <p>novosti</p>
-    <p>o nama</p>
+    <Link to='' style={{ textDecoration: 'none' }}><p>naslovnica</p></Link>
+    <Link to='/novosti' style={{ textDecoration: 'none' }}><p>novosti</p></Link>
+    <Link to='/aboutUs' style={{ textDecoration: 'none' }}><p>o nama</p></Link>
     <p>informacije</p>
     <p>natječaji</p>
     <div className={styles['search__container']}>
