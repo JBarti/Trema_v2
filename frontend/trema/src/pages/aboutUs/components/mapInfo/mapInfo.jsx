@@ -26,20 +26,29 @@ class MapInfo extends React.Component {
           </div>
         </div>
         <div className={styles['info__text']}>
-          <div className={styles['text__address']}>{address}</div>
+          <div className={styles['text__address']}>
+            <i className='fas fa-home' />
+            {address}
+          </div>
           <div className={styles['text__phoneNumber']}>
+            <i className='fas fa-phone' />
             {phoneNumber[0]}
             {owner[0]}
           </div>
           <div className={styles['text__phoneNumber']}>
+            <i className='fas fa-phone' />
             {phoneNumber[1]}
             {owner[1]}
           </div>
           <div className={styles['text__phoneNumber']}>
+            <i className='fas fa-phone' />
             {phoneNumber[2]}
             {owner[2]}
           </div>
-          <div className={styles['text__email']}>{email}</div>
+          <div className={styles['text__email']}>
+            <i className='fas fa-envelope' />
+            {email}
+          </div>
         </div>
       </div>
     );
@@ -52,7 +61,6 @@ export default MapInfo;
 
 MapInfo.propTypes = {
   data: PropTypes.shape({
-    imageURL: PropTypes.string,
     address: PropTypes.string,
     phoneNumber: PropTypes.arrayOf(PropTypes.string),
     owner: PropTypes.arrayOf(PropTypes.string),
