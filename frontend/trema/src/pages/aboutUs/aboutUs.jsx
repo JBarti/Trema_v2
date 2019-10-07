@@ -13,20 +13,19 @@ const AboutUs = () => (
     <SideNavbar />
     <div className={styles['aboutUs__content']}>
       <MapInfo data={{
-        address: 'Matice hrvatske 11, 21 000 Split, Hrvatska',
+        address: ' Matice hrvatske 11, 21 000 Split, Hrvatska',
         phoneNumber: [
-          '+ 385 21 558 428 ',
-          '+ 385 21 558 428 ',
-          '+ 385 21 558 428 ',
+          ' +385 21 558 428 ',
+          ' +385 21 558 428 ',
+          ' +385 21 558 428 ',
         ],
         owner: [
           ' - tajništvo',
           ' - profesor1',
           ' - proferor2'],
         email: [
-          'stryder.titanm8@gmail.com',
+          ' firstname.lastname@gmail.com',
         ],
-        imageURL: 'https://maps.google.com/maps?q=matice%20hrvatske%2011&t=&z=15&ie=UTF8&iwloc=&output=embed',
 
       }}
       />

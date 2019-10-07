@@ -21,7 +21,7 @@ class MapInfo extends React.Component {
       <div className={styles['map__info__container']}>
         <div className='mapouter'>
           <div className='gmap_canvas'>
-            <iframe title='map' width='950' height='750' src='https://maps.google.com/maps?q=matice%20hrvatske%2011&t=&z=15&ie=UTF8&iwloc=&output=embed' frameBorder='0' scrolling='no' marginHeight='0' marginWidth='0' />
+            <iframe title='map' width='850' height='400' src='https://maps.google.com/maps?q=matice%20hrvatske%2011&t=&z=15&ie=UTF8&iwloc=&output=embed' frameBorder='0' scrolling='no' marginHeight='0' marginWidth='0' />
             <a href='https://www.embedgooglemap.net/blog/best-wordpress-themes/' />
           </div>
         </div>
@@ -48,6 +48,13 @@ class MapInfo extends React.Component {
           <div className={styles['text__email']}>
             <i className='fas fa-envelope' />
             {email}
+          </div>
+          <div className='spinner'>
+            <div className='rect1' />
+            <div className='rect2' />
+            <div className='rect3' />
+            <div className='rect4' />
+            <div className='rect5' />
           </div>
         </div>
       </div>
