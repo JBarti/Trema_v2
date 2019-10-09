@@ -9,8 +9,9 @@
 }
 .schoolHistory__image {
     height: 500px;
+    flex: 53%;
 }
 .schoolHistory__text {
-    flex: 1;
-    padding: 90px;
+    flex: 47%;
+    padding: 3%;
 }
