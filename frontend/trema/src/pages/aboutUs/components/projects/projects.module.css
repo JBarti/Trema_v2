@@ -1,0 +1,35 @@
+.projekti__container {
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #5d99b1;
+    color: white;
+    height: 500px;
+}
+.projekti__text {
+    flex: 1;
+    padding: 90px 500px;
+
+}
+.projekti__title {
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 40px;
+}
+.projekti__paragraph {
+    width: 100%;
+    text-align: justify;
+    font-size: 18px;
+
+}
+.projekti__div {
+    width: 100px;
+    background-color: #3b4f68;
+    text-align: center;
+    border-radius: 7px;
+    padding: 5px;
+    border-style: solid;
+    border-color: white;
+    margin: 40px auto auto;
+}
