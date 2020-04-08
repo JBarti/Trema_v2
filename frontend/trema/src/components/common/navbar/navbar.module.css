@@ -13,3 +13,18 @@
   position: absolute;
   right: 50px;
 }
+
+p {
+  color: white;
+  text-decoration: none;
+}
+
+p:hover {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+.link_decoration {
+  text-decoration: none;
+}
