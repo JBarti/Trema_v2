@@ -24,3 +24,7 @@ p:hover {
   color: white;
   text-decoration: none;
 }
+
+.link_decoration {
+  text-decoration: none;
+}

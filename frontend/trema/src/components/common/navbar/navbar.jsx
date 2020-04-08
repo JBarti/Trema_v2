@@ -24,9 +24,9 @@ const Navbar = (props) => {
 
 const MainNavbar = () => (
   <Navbar variant='main'>
-    <Link to='' style={{ textDecoration: 'none' }}><p>naslovnica</p></Link>
-    <Link to='/novosti' style={{ textDecoration: 'none' }}><p>novosti</p></Link>
-    <Link to='/aboutUs' style={{ textDecoration: 'none' }}><p>o nama</p></Link>
+    <Link to='' className={styles['link_decoration']}><p>naslovnica</p></Link>
+    <Link to='/novosti' className={styles['link_decoration']}><p>novosti</p></Link>
+    <Link to='/aboutUs' className={styles['link_decoration']}><p>o nama</p></Link>
     <p>informacije</p>
     <p>natječaji</p>
     <div className={styles['search__container']}>
